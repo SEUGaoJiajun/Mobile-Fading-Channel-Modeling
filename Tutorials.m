@@ -1,0 +1,22 @@
+% x=0:0.5:10;
+% p=1-exp(-x/2);
+% plot(x,p,'-^b','LineWidth', 1.5);
+% ylabel('P(\gamma_0)');
+% xlabel('\gamma_0');
+clear,clc;close all;
+% ba=0.6726;
+% tau=[0 0.2 0.5 1.6 2.3 5.0];
+% a=[0.189 0.379 0.239 0.095 0.061 0.037];
+% re=sqrt(sum(a.*(tau-ba).^2));
+% stem(tau,a,'LineWidth', 1.5);
+% ylabel('a_i^2');
+% xlabel('\tau (\mus)');
+
+fmax=100;
+Omega=20;
+step=2;
+fD=-fmax:step:fmax;
+SfD=Omega./(2*pi*fmax.*sqrt(1-(fD./fmax).^2));
+plot(fD,10*log10(SfD*1000),'LineWidth', 1.5);
+ylabel('S(f_D) / (dBm/Hz)');
+xlabel('f_D (Hz)');
